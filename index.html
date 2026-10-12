@@ -181,19 +181,16 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font
   <div class="hero"><h1>Work</h1></div>
   <p>Originals with a price are available. Sold paintings stay on the page as a record of past work.</p>
   <ul class="filters" id="filters">
-    <li><button aria-pressed="true" data-f="all">All</button></li>
-    <li><button aria-pressed="false" data-f="Available">Available</button></li>
+    <li><button aria-pressed="true" data-f="Available">Available</button></li>
     <li><button aria-pressed="false" data-f="Sold">Sold</button></li>
   </ul>
   <div id="workgrid">
     <div class="wsec" data-sec="Available">
-      <div class="sechead"><h2>Available</h2></div>
       <div class="masonry">
     <a class="tile p3" href="#work" data-c="Paintings" data-s="Available" data-img="OxleyNatureCenter.jpg"><img class="wimg" src="OxleyNatureCenter.jpg" alt="Oxley Nature Center" loading="lazy"><div class="cap"><h3>Oxley Nature Center</h3><b class="tag">$0,000</b></div><div class="meta">30 × 40 in</div></a>
       </div>
     </div>
-    <div class="wsec" data-sec="Sold">
-      <div class="sechead"><h2>Sold</h2></div>
+    <div class="wsec" data-sec="Sold" hidden>
       <div class="masonry">
     <a class="tile p4 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="SpiritAnimals.jpg"><img class="wimg" src="SpiritAnimals.jpg" alt="Spirit Animals" loading="lazy"><div class="cap"><h3>Spirit Animals</h3><b class="tag s">SOLD</b></div><div class="meta">36 × 48 in</div></a>
     <a class="tile p1 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Logan-and-Sister.jpg"><img class="wimg" src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="cap"><h3>Logan and Sister</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
@@ -290,7 +287,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     var f=b.getAttribute("data-f");
     this.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
     document.querySelectorAll("#workgrid .wsec").forEach(function(sec){
-      sec.hidden=!(f==="all"||sec.getAttribute("data-sec")===f);
+      sec.hidden=sec.getAttribute("data-sec")!==f;
     });
   });
   var dlg=document.getElementById("dlg");
