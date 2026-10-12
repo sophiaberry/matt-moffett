@@ -276,4 +276,70 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
 <script>
 (function(){
   var pages=["home","work","prints","about","services","contact"];
-  var titles={home:"Tulsa Artist",work:"Work",prints:"Prints",about:"About",services:"Services",contact:"Contact"}
+  var titles={home:"Tulsa Artist",work:"Work",prints:"Prints",about:"About",services:"Services",contact:"Contact"};
+  function route(){
+    var id=(location.hash||"#home").slice(1);
+    if(pages.indexOf(id)<0)id="home";
+    pages.forEach(function(p){document.getElementById(p).classList.toggle("on",p===id)});
+    document.querySelectorAll("nav a").forEach(function(a){
+      if(a.getAttribute("href")==="#"+id)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
+    });
+    document.title=(id==="home"?"Matt Moffett | Tulsa Artist":"Matt Moffett | "+titles[id]);
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",route);route();
+  document.getElementById("filters").addEventListener("click",function(e){
+    var b=e.target.closest("button");if(!b)return;
+    var f=b.getAttribute("data-f");
+    this.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+    document.querySelectorAll("#workgrid .tile").forEach(function(t){
+      t.classList.toggle("hide",f!=="all"&&t.getAttribute("data-c")!==f&&t.getAttribute("data-s")!==f);
+    });
+  });
+  var dlg=document.getElementById("dlg");
+  document.getElementById("workgrid").addEventListener("click",function(e){
+    var t=e.target.closest("a.tile");if(!t)return;
+    e.preventDefault();
+    var title=t.querySelector("h3").textContent,
+        sold=t.getAttribute("data-s")==="Sold";
+    document.getElementById("dpw").className=(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":"");
+    var img=t.getAttribute("data-img"),dph=document.getElementById("dph"),dimg=document.getElementById("dimg");
+    if(img){dimg.src=img;dimg.alt=title;dimg.hidden=false;dph.hidden=true}
+    else{dimg.hidden=true;dimg.removeAttribute("src");dph.hidden=false}
+    document.getElementById("dt").textContent=title;
+    document.getElementById("dd").textContent=t.querySelector(".meta").textContent;
+    var dp=document.getElementById("dp");
+    dp.textContent=sold?"SOLD":t.querySelector(".tag").textContent;
+    dp.className="dprice"+(sold?" s":"");
+    document.getElementById("dn").textContent=sold?"This original has sold. Prints may be available.":"Available. Medium, year, and shipping details go here.";
+    var a=document.getElementById("da");a.innerHTML="";
+    var l=document.createElement("a");l.className="btn";
+    if(sold){l.href="#prints";l.textContent="See prints";l.addEventListener("click",function(){dlg.close()});}
+    else{l.href="mailto:hello@mattmoffett.com?subject="+encodeURIComponent("Purchase: "+title);l.textContent="Buy this piece";}
+    a.appendChild(l);
+    dlg.showModal();
+  });
+  document.getElementById("dx").addEventListener("click",function(){dlg.close()});
+  dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+  document.getElementById("yr").textContent=new Date().getFullYear();
+
+  var umb=document.getElementById("umb");
+  if(umb&&matchMedia("(hover:hover) and (pointer:fine)").matches&&!matchMedia("(prefers-reduced-motion:reduce)").matches){
+    var ux=0,uy=0,tx=0,ty=0,shown=false;
+    window.addEventListener("mousemove",function(e){
+      tx=e.clientX;ty=e.clientY;
+      if(!shown){ux=tx;uy=ty;shown=true;umb.style.opacity=1}
+    });
+    document.documentElement.addEventListener("mouseleave",function(){shown=false;umb.style.opacity=0});
+    (function loop(){
+      var dx=tx-ux;
+      ux+=dx*.18;uy+=(ty-uy)*.18;
+      umb.style.transform="translate("+(ux+14)+"px,"+(uy+14)+"px) rotate("+Math.max(-25,Math.min(25,dx*.6))+"deg)";
+      requestAnimationFrame(loop);
+    })();
+  }
+})();
+</script>
+</body>
+</html>
+
