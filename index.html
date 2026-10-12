@@ -54,6 +54,16 @@ p{margin:0 0 1rem;max-width:62ch}
 .sechead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;border-top:2px solid var(--ink);padding-top:1rem;margin:3.5rem 0 1.5rem}
 .sechead h2{margin:0}
 .sechead a{font-weight:600;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:5px}
+.masonry{column-count:3;column-gap:clamp(1.25rem,3vw,2rem)}
+@media (max-width:959px){.masonry{column-count:2}}
+@media (max-width:559px){.masonry{column-count:1}}
+.fw{position:relative;display:block;margin:0 0 clamp(1.25rem,3vw,2rem);text-decoration:none;color:#fff;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
+.fw img{display:block;width:100%;height:auto;border:12px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.fw-cap{position:absolute;left:12px;right:12px;bottom:12px;padding:3rem 1rem 1rem;background:linear-gradient(to top,rgba(14,10,28,.88),rgba(14,10,28,0));opacity:0;transition:opacity .2s}
+.fw:hover .fw-cap,.fw:focus-visible .fw-cap{opacity:1}
+@media (hover:none){.fw-cap{opacity:1}}
+.fw-cap h3{color:#fff;font-size:1.15rem}
+.fw-cap p{margin:.15rem 0 0;font-size:.95rem;color:rgba(255,255,255,.88)}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1.25rem,3vw,2rem)}
 .tile{grid-column:span 12;display:block;text-decoration:none}
 @media (min-width:640px){.tile{grid-column:span 6}}
@@ -146,13 +156,13 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font
   <p class="banner-note">Pictured: The Night We Learned How to Swim</p>
 
   <div class="sechead"><h2>Featured work</h2><a href="#work">See all work</a></div>
-  <div class="grid">
-    <a class="tile w4 p1" href="#work"><div class="ph img" role="img" aria-label="Logan and Sister" style="background-image:url(Logan-and-Sister.jpg)"></div><div class="cap"><h3>Logan and Sister</h3></div></a>
-    <a class="tile w4 p2" href="#work"><div class="ph img" role="img" aria-label="Henry the Horrible" style="background-image:url(Henry-the-Horrible.jpg)"></div><div class="cap"><h3>Henry the Horrible</h3></div></a>
-    <a class="tile w4 p3" href="#prints"><div class="ph img" role="img" aria-label="Local Villa" style="background-image:url(LocalVilla.jpeg)"></div><div class="cap"><h3>Local Villa</h3></div></a>
-    <a class="tile w4 p4 mos" href="#work"><div class="ph"></div><div class="cap"><h3>Sun Over Cherry Street</h3></div></a>
-    <a class="tile w4 p5" href="#work"><div class="ph img" role="img" aria-label="Bear" style="background-image:url(Bear.jpg)"></div><div class="cap"><h3>Bear</h3></div></a>
-    <a class="tile w4 p6 mos" href="#work"><div class="ph"></div><div class="cap"><h3>Tile Quilt No. 4</h3></div></a>
+  <div class="masonry">
+    <a class="fw" href="#work"><img src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="fw-cap"><h3>Logan and Sister</h3><p>00 × 00 in</p></div></a>
+    <a class="fw" href="#work"><img src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="fw-cap"><h3>Henry the Horrible</h3><p>00 × 00 in</p></div></a>
+    <a class="fw" href="#prints"><img src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="fw-cap"><h3>Local Villa</h3><p>00 × 00 in</p></div></a>
+    <a class="fw p4 mos" href="#work"><div class="ph" style="aspect-ratio:4/5"></div><div class="fw-cap"><h3>Sun Over Cherry Street</h3><p>00 × 00 in</p></div></a>
+    <a class="fw" href="#work"><img src="Bear.jpg" alt="Bear" loading="lazy"><div class="fw-cap"><h3>Bear</h3><p>00 × 00 in</p></div></a>
+    <a class="fw p6 mos" href="#work"><div class="ph" style="aspect-ratio:4/3"></div><div class="fw-cap"><h3>Tile Quilt No. 4</h3><p>00 × 00 in</p></div></a>
   </div>
 
   <div class="cta">
