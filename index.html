@@ -64,6 +64,10 @@ p{margin:0 0 1rem;max-width:62ch}
 @media (hover:none){.fw-cap{opacity:1}}
 .fw-cap h3{color:#fff;font-size:1.15rem}
 .fw-cap p{margin:.15rem 0 0;font-size:.95rem;color:rgba(255,255,255,.88)}
+.masonry .tile{grid-column:auto;margin:0 0 clamp(1.25rem,3vw,2rem);break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
+.wimg{display:block;width:100%;height:auto;border:12px solid #fff;box-shadow:0 0 0 1px var(--line)}
+#dimg{display:block;width:100%;height:auto;border:12px solid #fff;box-shadow:0 0 0 1px var(--line)}
+#dimg[hidden],#dph[hidden]{display:none}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1.25rem,3vw,2rem)}
 .tile{grid-column:span 12;display:block;text-decoration:none}
 @media (min-width:640px){.tile{grid-column:span 6}}
@@ -159,6 +163,7 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font
   <div class="masonry">
     <a class="fw" href="#work"><img src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="fw-cap"><h3>Logan and Sister</h3><p>00 × 00 in</p></div></a>
     <a class="fw" href="#work"><img src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="fw-cap"><h3>Henry the Horrible</h3><p>00 × 00 in</p></div></a>
+    <a class="fw" href="#work"><img src="OxleyNatureCenter.jpg" alt="Oxley Nature Center" loading="lazy"><div class="fw-cap"><h3>Oxley Nature Center</h3><p>30 × 40 in</p></div></a>
     <a class="fw" href="#prints"><img src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="fw-cap"><h3>Local Villa</h3><p>00 × 00 in</p></div></a>
     <a class="fw p4 mos" href="#work"><div class="ph" style="aspect-ratio:4/5"></div><div class="fw-cap"><h3>Sun Over Cherry Street</h3><p>00 × 00 in</p></div></a>
     <a class="fw" href="#work"><img src="Bear.jpg" alt="Bear" loading="lazy"><div class="fw-cap"><h3>Bear</h3><p>00 × 00 in</p></div></a>
@@ -180,33 +185,33 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font
     <li><button aria-pressed="false" data-f="Available">Available</button></li>
     <li><button aria-pressed="false" data-f="Sold">Sold</button></li>
   </ul>
-  <div class="grid three" id="workgrid">
-    <a class="tile p1" href="#work" data-c="Paintings" data-s="Available" data-img="Logan-and-Sister.jpg"><div class="ph img" role="img" aria-label="Logan and Sister" style="background-image:url(Logan-and-Sister.jpg)"></div><div class="cap"><h3>Logan and Sister</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p2 " href="#work" data-c="Paintings" data-s="Available" data-img="Henry-the-Horrible.jpg"><div class="ph img" role="img" aria-label="Henry the Horrible" style="background-image:url(Henry-the-Horrible.jpg)"></div><div class="cap"><h3>Henry the Horrible</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p3" href="#work" data-c="Paintings" data-s="Available" data-img="OxleyNatureCenter.jpg"><div class="ph img" role="img" aria-label="Oxley Nature Center" style="background-image:url(OxleyNatureCenter.jpg)"></div><div class="cap"><h3>Oxley Nature Center</h3><b class="tag">$0,000</b></div><div class="meta">30 × 40 in</div></a>
-    <a class="tile p3" href="#work" data-c="Paintings" data-s="Available"><div class="ph"></div><div class="cap"><h3>Prairie Storm</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p4 mos" href="#work" data-c="Mosaics" data-s="Available"><div class="ph"></div><div class="cap"><h3>Sun Over Cherry Street</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p5" href="#work" data-c="Paintings" data-s="Available"><div class="ph"></div><div class="cap"><h3>Kitchen Table</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p6 mos" href="#work" data-c="Mosaics" data-s="Available"><div class="ph"></div><div class="cap"><h3>Tile Quilt No. 4</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p6 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="MothNight.jpg"><div class="ph img" role="img" aria-label="Moth Night" style="background-image:url(MothNight.jpg)"></div><div class="cap"><h3>Moth Night</h3><b class="tag s">SOLD</b></div><div class="meta">24 × 24 in</div></a>
-    <a class="tile p5 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Bear.jpg"><div class="ph img" role="img" aria-label="Bear" style="background-image:url(Bear.jpg)"></div><div class="cap"><h3>Bear</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p4 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph"></div><div class="cap"><h3>Red Fork Sunrise</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p1 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph"></div><div class="cap"><h3>Blue Door, Greenwood</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p6 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph"></div><div class="cap"><h3>Osage Hills in August</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p2 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph"></div><div class="cap"><h3>Porch Light</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+  <div class="masonry" id="workgrid">
+    <a class="tile p3" href="#work" data-c="Paintings" data-s="Available" data-img="OxleyNatureCenter.jpg"><img class="wimg" src="OxleyNatureCenter.jpg" alt="Oxley Nature Center" loading="lazy"><div class="cap"><h3>Oxley Nature Center</h3><b class="tag">$0,000</b></div><div class="meta">30 × 40 in</div></a>
+    <a class="tile p3" href="#work" data-c="Paintings" data-s="Available"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Prairie Storm</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p4 mos" href="#work" data-c="Mosaics" data-s="Available"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Sun Over Cherry Street</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p5" href="#work" data-c="Paintings" data-s="Available"><div class="ph" style="aspect-ratio:1/1"></div><div class="cap"><h3>Kitchen Table</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p6 mos" href="#work" data-c="Mosaics" data-s="Available"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Tile Quilt No. 4</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p1 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Logan-and-Sister.jpg"><img class="wimg" src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="cap"><h3>Logan and Sister</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p2 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Henry-the-Horrible.jpg"><img class="wimg" src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="cap"><h3>Henry the Horrible</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p6 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="MothNight.jpg"><img class="wimg" src="MothNight.jpg" alt="Moth Night" loading="lazy"><div class="cap"><h3>Moth Night</h3><b class="tag s">SOLD</b></div><div class="meta">24 × 24 in</div></a>
+    <a class="tile p5 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Bear.jpg"><img class="wimg" src="Bear.jpg" alt="Bear" loading="lazy"><div class="cap"><h3>Bear</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p4 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Red Fork Sunrise</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p1 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Blue Door, Greenwood</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p6 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:1/1"></div><div class="cap"><h3>Osage Hills in August</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+    <a class="tile p2 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Porch Light</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
   </div>
 </section>
 
 <section id="prints" class="page" aria-label="Prints">
   <div class="hero"><h1>Prints</h1></div>
   <p>Signed, numbered, archival prints of selected paintings. Originals are on the Work page.</p>
-  <div class="grid">
-    <div class="tile w4 tall p1 pr"><div class="ph img" role="img" aria-label="Logan and Sister" style="background-image:url(Logan-and-Sister.jpg)"></div><div class="cap"><h3>Logan and Sister</h3><span>12 × 16 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Logan%20and%20Sister">Order this print</a></div>
-    <div class="tile w4 tall p3 pr"><div class="ph img" role="img" aria-label="Local Villa" style="background-image:url(LocalVilla.jpeg)"></div><div class="cap"><h3>Local Villa</h3><span>12 × 16 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Local%20Villa">Order this print</a></div>
-    <div class="tile w4 tall p5 pr"><div class="ph"></div><div class="cap"><h3>Kitchen Table</h3><span>12 × 16 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Kitchen%20Table">Order this print</a></div>
-    <div class="tile w4 tall p4 pr"><div class="ph"></div><div class="cap"><h3>Red Fork Sunrise</h3><span>12 × 16 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Red%20Fork%20Sunrise">Order this print</a></div>
-    <div class="tile w4 tall p6 pr"><div class="ph"></div><div class="cap"><h3>Osage Hills in August</h3><span>12 × 16 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Osage%20Hills%20in%20August">Order this print</a></div>
-    <div class="tile w4 tall p2 pr"><div class="ph"></div><div class="cap"><h3>Porch Light</h3><span>12 × 16 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Porch%20Light">Order this print</a></div>
+  <div class="masonry">
+    <div class="tile p1 pr"><img class="wimg" src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="cap"><h3>Logan and Sister</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Logan%20and%20Sister">Order this print</a></div>
+    <div class="tile p3 pr"><img class="wimg" src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="cap"><h3>Local Villa</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Local%20Villa">Order this print</a></div>
+    <div class="tile p5 pr"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Kitchen Table</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Kitchen%20Table">Order this print</a></div>
+    <div class="tile p4 pr"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Red Fork Sunrise</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Red%20Fork%20Sunrise">Order this print</a></div>
+    <div class="tile p6 pr"><div class="ph" style="aspect-ratio:1/1"></div><div class="cap"><h3>Osage Hills in August</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Osage%20Hills%20in%20August">Order this print</a></div>
+    <div class="tile p2 pr"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Porch Light</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Porch%20Light">Order this print</a></div>
   </div>
   <p style="margin-top:2rem;color:var(--muted)">Sizes, edition numbers, and shipping details go here. Even sold originals can be available as prints.</p>
 </section>
@@ -251,7 +256,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
 <dialog id="dlg" aria-labelledby="dt">
   <button class="dx" id="dx" type="button" aria-label="Close">×</button>
   <div class="dbody">
-    <div id="dpw"><div class="ph" id="dph"></div></div>
+    <div id="dpw"><div class="ph" id="dph"></div><img id="dimg" alt="" hidden></div>
     <div>
       <h2 id="dt"></h2>
       <p class="dprice" id="dp"></p>
@@ -296,9 +301,9 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     var title=t.querySelector("h3").textContent,
         sold=t.getAttribute("data-s")==="Sold";
     document.getElementById("dpw").className=(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":"");
-    var img=t.getAttribute("data-img"),dph=document.getElementById("dph");
-    dph.className="ph"+(img?" img":"");
-    dph.style.backgroundImage=img?"url("+img+")":"";
+    var img=t.getAttribute("data-img"),dph=document.getElementById("dph"),dimg=document.getElementById("dimg");
+    if(img){dimg.src=img;dimg.alt=title;dimg.hidden=false;dph.hidden=true}
+    else{dimg.hidden=true;dimg.removeAttribute("src");dph.hidden=false}
     document.getElementById("dt").textContent=title;
     document.getElementById("dd").textContent=t.querySelector(".meta").textContent;
     var dp=document.getElementById("dp");
