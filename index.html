@@ -54,6 +54,7 @@ p{margin:0 0 1rem;max-width:62ch}
 .sechead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;border-top:2px solid var(--ink);padding-top:1rem;margin:3.5rem 0 1.5rem}
 .sechead h2{margin:0}
 .sechead a{font-weight:600;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:5px}
+.wsec:first-child .sechead{margin-top:1rem}
 .masonry{column-count:3;column-gap:clamp(1.25rem,3vw,2rem)}
 @media (max-width:959px){.masonry{column-count:2}}
 @media (max-width:559px){.masonry{column-count:1}}
@@ -166,9 +167,7 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font
     <a class="fw" href="#work"><img src="OxleyNatureCenter.jpg" alt="Oxley Nature Center" loading="lazy"><div class="fw-cap"><h3>Oxley Nature Center</h3><p>30 × 40 in</p></div></a>
     <a class="fw" href="#work"><img src="SpiritAnimals.jpg" alt="Spirit Animals" loading="lazy"><div class="fw-cap"><h3>Spirit Animals</h3><p>36 × 48 in</p></div></a>
     <a class="fw" href="#prints"><img src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="fw-cap"><h3>Local Villa</h3><p>00 × 00 in</p></div></a>
-    <a class="fw p4 mos" href="#work"><div class="ph" style="aspect-ratio:4/5"></div><div class="fw-cap"><h3>Sun Over Cherry Street</h3><p>00 × 00 in</p></div></a>
     <a class="fw" href="#work"><img src="Bear.jpg" alt="Bear" loading="lazy"><div class="fw-cap"><h3>Bear</h3><p>00 × 00 in</p></div></a>
-    <a class="fw p6 mos" href="#work"><div class="ph" style="aspect-ratio:4/3"></div><div class="fw-cap"><h3>Tile Quilt No. 4</h3><p>00 × 00 in</p></div></a>
   </div>
 
   <div class="cta">
@@ -186,21 +185,23 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font
     <li><button aria-pressed="false" data-f="Available">Available</button></li>
     <li><button aria-pressed="false" data-f="Sold">Sold</button></li>
   </ul>
-  <div class="masonry" id="workgrid">
+  <div id="workgrid">
+    <div class="wsec" data-sec="Available">
+      <div class="sechead"><h2>Available</h2></div>
+      <div class="masonry">
     <a class="tile p3" href="#work" data-c="Paintings" data-s="Available" data-img="OxleyNatureCenter.jpg"><img class="wimg" src="OxleyNatureCenter.jpg" alt="Oxley Nature Center" loading="lazy"><div class="cap"><h3>Oxley Nature Center</h3><b class="tag">$0,000</b></div><div class="meta">30 × 40 in</div></a>
-    <a class="tile p3" href="#work" data-c="Paintings" data-s="Available"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Prairie Storm</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p4 mos" href="#work" data-c="Mosaics" data-s="Available"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Sun Over Cherry Street</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p5" href="#work" data-c="Paintings" data-s="Available"><div class="ph" style="aspect-ratio:1/1"></div><div class="cap"><h3>Kitchen Table</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p6 mos" href="#work" data-c="Mosaics" data-s="Available"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Tile Quilt No. 4</h3><b class="tag">$0,000</b></div><div class="meta">00 × 00 in</div></a>
+      </div>
+    </div>
+    <div class="wsec" data-sec="Sold">
+      <div class="sechead"><h2>Sold</h2></div>
+      <div class="masonry">
     <a class="tile p4 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="SpiritAnimals.jpg"><img class="wimg" src="SpiritAnimals.jpg" alt="Spirit Animals" loading="lazy"><div class="cap"><h3>Spirit Animals</h3><b class="tag s">SOLD</b></div><div class="meta">36 × 48 in</div></a>
     <a class="tile p1 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Logan-and-Sister.jpg"><img class="wimg" src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="cap"><h3>Logan and Sister</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
     <a class="tile p2 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Henry-the-Horrible.jpg"><img class="wimg" src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="cap"><h3>Henry the Horrible</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
     <a class="tile p6 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="MothNight.jpg"><img class="wimg" src="MothNight.jpg" alt="Moth Night" loading="lazy"><div class="cap"><h3>Moth Night</h3><b class="tag s">SOLD</b></div><div class="meta">24 × 24 in</div></a>
     <a class="tile p5 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Bear.jpg"><img class="wimg" src="Bear.jpg" alt="Bear" loading="lazy"><div class="cap"><h3>Bear</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p4 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Red Fork Sunrise</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p1 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Blue Door, Greenwood</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p6 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:1/1"></div><div class="cap"><h3>Osage Hills in August</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p2 sold" href="#work" data-c="Paintings" data-s="Sold"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Porch Light</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -210,10 +211,6 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font
   <div class="masonry">
     <div class="tile p1 pr"><img class="wimg" src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="cap"><h3>Logan and Sister</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Logan%20and%20Sister">Order this print</a></div>
     <div class="tile p3 pr"><img class="wimg" src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="cap"><h3>Local Villa</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Local%20Villa">Order this print</a></div>
-    <div class="tile p5 pr"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Kitchen Table</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Kitchen%20Table">Order this print</a></div>
-    <div class="tile p4 pr"><div class="ph" style="aspect-ratio:4/3"></div><div class="cap"><h3>Red Fork Sunrise</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Red%20Fork%20Sunrise">Order this print</a></div>
-    <div class="tile p6 pr"><div class="ph" style="aspect-ratio:1/1"></div><div class="cap"><h3>Osage Hills in August</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Osage%20Hills%20in%20August">Order this print</a></div>
-    <div class="tile p2 pr"><div class="ph" style="aspect-ratio:4/5"></div><div class="cap"><h3>Porch Light</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Porch%20Light">Order this print</a></div>
   </div>
   <p style="margin-top:2rem;color:var(--muted)">Sizes, edition numbers, and shipping details go here. Even sold originals can be available as prints.</p>
 </section>
@@ -292,8 +289,8 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     var b=e.target.closest("button");if(!b)return;
     var f=b.getAttribute("data-f");
     this.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
-    document.querySelectorAll("#workgrid .tile").forEach(function(t){
-      t.classList.toggle("hide",f!=="all"&&t.getAttribute("data-c")!==f&&t.getAttribute("data-s")!==f);
+    document.querySelectorAll("#workgrid .wsec").forEach(function(sec){
+      sec.hidden=!(f==="all"||sec.getAttribute("data-sec")===f);
     });
   });
   var dlg=document.getElementById("dlg");
@@ -342,4 +339,3 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
 </script>
 </body>
 </html>
-
