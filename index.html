@@ -95,6 +95,7 @@ p{margin:0 0 1rem;max-width:62ch}
 .mos .ph::after{background-color:var(--c)}
 .ph.img{background-size:cover;background-position:center}
 .ph.img::before,.ph.img::after{display:none}
+.open{display:block;color:inherit;text-decoration:none}
 .price{padding:.1rem .1rem 0;font-weight:600}
 .pr .btn{margin-top:.8rem}
 a.tile{cursor:pointer}
@@ -164,7 +165,7 @@ footer .fine a{color:#DDE3F5}
     <img src="The-Night-We-Learned-How-to-Swim.jpg" alt="The Night We Learned How to Swim, a triptych painting of three women with champagne, goldfish, and bubbles in front of glowing city towers at night">
     <div class="banner-text">
       <h1><span>Paint, tile,</span><span>and Tulsa</span><span>in full color.</span></h1>
-      <h2>Paintings and mosaics from Oklahoma artist, Matt Moffett.</h2>
+      <h2>Paintings and mosaics from an Oklahoma artist, made by hand, one brushstroke or one tile at a time.</h2>
       <div class="actions"><a class="btn" href="#work">See the work</a><a class="btn ghost" href="#prints">Shop prints</a></div>
     </div>
   </div>
@@ -173,7 +174,7 @@ footer .fine a{color:#DDE3F5}
   <div class="sechead"><h2>Featured work</h2><a href="#work">See all work</a></div>
   <div class="masonry">
     <a class="fw" href="#work"><img src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="fw-cap"><h3>Logan and Sister</h3><p>00 × 00 in</p></div></a>
-    <a class="fw" href="#work"><img src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="fw-cap"><h3>Henry the Horrible</h3><p>24 x 36 in</p></div></a>
+    <a class="fw" href="#work"><img src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="fw-cap"><h3>Henry the Horrible</h3><p>00 × 00 in</p></div></a>
     <a class="fw" href="#work"><img src="OxleyNatureCenter.jpg" alt="Oxley Nature Center" loading="lazy"><div class="fw-cap"><h3>Oxley Nature Center</h3><p>30 × 40 in</p></div></a>
     <a class="fw" href="#work"><img src="SpiritAnimals.jpg" alt="Spirit Animals" loading="lazy"><div class="fw-cap"><h3>Spirit Animals</h3><p>36 × 48 in</p></div></a>
     <a class="fw" href="#prints"><img src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="fw-cap"><h3>Local Villa</h3><p>00 × 00 in</p></div></a>
@@ -204,7 +205,7 @@ footer .fine a{color:#DDE3F5}
       <div class="masonry">
     <a class="tile p4 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="SpiritAnimals.jpg"><img class="wimg" src="SpiritAnimals.jpg" alt="Spirit Animals" loading="lazy"><div class="cap"><h3>Spirit Animals</h3><b class="tag s">SOLD</b></div><div class="meta">36 × 48 in</div></a>
     <a class="tile p1 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Logan-and-Sister.jpg"><img class="wimg" src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="cap"><h3>Logan and Sister</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
-    <a class="tile p2 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Henry-the-Horrible.jpg"><img class="wimg" src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="cap"><h3>Henry the Horrible</h3><b class="tag s">SOLD</b></div><div class="meta">24 x 36 in</div></a>
+    <a class="tile p2 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Henry-the-Horrible.jpg"><img class="wimg" src="Henry-the-Horrible.jpg" alt="Henry the Horrible" loading="lazy"><div class="cap"><h3>Henry the Horrible</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
     <a class="tile p6 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="MothNight.jpg"><img class="wimg" src="MothNight.jpg" alt="Moth Night" loading="lazy"><div class="cap"><h3>Moth Night</h3><b class="tag s">SOLD</b></div><div class="meta">24 × 24 in</div></a>
     <a class="tile p5 sold" href="#work" data-c="Paintings" data-s="Sold" data-img="Bear.jpg"><img class="wimg" src="Bear.jpg" alt="Bear" loading="lazy"><div class="cap"><h3>Bear</h3><b class="tag s">SOLD</b></div><div class="meta">00 × 00 in</div></a>
       </div>
@@ -217,7 +218,12 @@ footer .fine a{color:#DDE3F5}
   <p>Signed, numbered, archival prints of selected paintings. Originals are on the Work page.</p>
   <div class="masonry">
     <div class="tile p1 pr"><img class="wimg" src="Logan-and-Sister.jpg" alt="Logan and Sister" loading="lazy"><div class="cap"><h3>Logan and Sister</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Logan%20and%20Sister">Order this print</a></div>
-    <div class="tile p3 pr"><img class="wimg" src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="cap"><h3>Local Villa</h3><span>00 × 00 in</span></div><div class="price">$00</div><a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Local%20Villa">Order this print</a></div>
+    <div class="tile p3 pr" data-img="LocalVilla.jpeg" data-price="$40" data-dim='12" x 12" with .5" border'>
+      <a class="open" href="#prints"><img class="wimg" src="LocalVilla.jpeg" alt="Local Villa" loading="lazy"><div class="cap"><h3>Local Villa</h3><span>12" x 12"</span></div></a>
+      <div class="price">$40</div>
+      <a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20order%3A%20Local%20Villa">Order this print</a>
+      <div class="more" hidden><p>Display the beautiful Philbrook Villa and Gardens in your home with this colorful rendition created by esteemed local artist Matt Moffett.</p><p>Each print edition is signed and numbered by Matt and is printed on high-quality fine art paper.</p></div>
+    </div>
   </div>
   <p style="margin-top:2rem;color:var(--muted)">Sizes, edition numbers, and shipping details go here. Even sold originals can be available as prints.</p>
 </section>
@@ -266,7 +272,8 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     <div>
       <h2 id="dt"></h2>
       <p class="dprice" id="dp"></p>
-      <p><strong>Dimensions:</strong> <span id="dd"></span></p>
+      <p><strong id="dl">Dimensions:</strong> <span id="dd"></span></p>
+      <div id="dmore"></div>
       <p id="dn" style="color:var(--muted)"></p>
       <div id="da"></div>
     </div>
@@ -310,27 +317,36 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     });
   });
   var dlg=document.getElementById("dlg");
+  function openDlg(o){
+    var dph=document.getElementById("dph"),dimg=document.getElementById("dimg");
+    document.getElementById("dpw").className=o.cls||"";
+    if(o.img){dimg.src=o.img;dimg.alt=o.title;dimg.hidden=false;dph.hidden=true}
+    else{dimg.hidden=true;dimg.removeAttribute("src");dph.hidden=false}
+    document.getElementById("dt").textContent=o.title;
+    document.getElementById("dl").textContent=o.dimLabel;
+    document.getElementById("dd").textContent=o.dim;
+    var dp=document.getElementById("dp");
+    dp.textContent=o.price;dp.className="dprice"+(o.sold?" s":"");
+    document.getElementById("dmore").innerHTML=o.more||"";
+    document.getElementById("dn").textContent=o.note||"";
+    var a=document.getElementById("da");a.innerHTML="";
+    var l=document.createElement("a");l.className="btn";l.href=o.href;l.textContent=o.btn;
+    if(o.close)l.addEventListener("click",function(){dlg.close()});
+    a.appendChild(l);
+    dlg.showModal();
+  }
   document.getElementById("workgrid").addEventListener("click",function(e){
     var t=e.target.closest("a.tile");if(!t)return;
     e.preventDefault();
     var title=t.querySelector("h3").textContent,
         sold=t.getAttribute("data-s")==="Sold";
-    document.getElementById("dpw").className=(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":"");
-    var img=t.getAttribute("data-img"),dph=document.getElementById("dph"),dimg=document.getElementById("dimg");
-    if(img){dimg.src=img;dimg.alt=title;dimg.hidden=false;dph.hidden=true}
-    else{dimg.hidden=true;dimg.removeAttribute("src");dph.hidden=false}
-    document.getElementById("dt").textContent=title;
-    document.getElementById("dd").textContent=t.querySelector(".meta").textContent;
-    var dp=document.getElementById("dp");
-    dp.textContent=sold?"SOLD":t.querySelector(".tag").textContent;
-    dp.className="dprice"+(sold?" s":"");
-    document.getElementById("dn").textContent=sold?"This original has sold. Prints may be available.":"Available. Medium, year, and shipping details go here.";
-    var a=document.getElementById("da");a.innerHTML="";
-    var l=document.createElement("a");l.className="btn";
-    if(sold){l.href="#prints";l.textContent="See prints";l.addEventListener("click",function(){dlg.close()});}
-    else{l.href="mailto:hello@mattmoffett.com?subject="+encodeURIComponent("Purchase: "+title);l.textContent="Buy this piece";}
-    a.appendChild(l);
-    dlg.showModal();
+    openDlg({title:title,img:t.getAttribute("data-img"),cls:(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":""),dimLabel:"Dimensions:",dim:t.querySelector(".meta").textContent,price:sold?"SOLD":t.querySelector(".tag").textContent,sold:sold,note:sold?"This original has sold. Prints may be available.":"Available. Medium, year, and shipping details go here.",btn:sold?"See prints":"Buy this piece",href:sold?"#prints":"mailto:hello@mattmoffett.com?subject="+encodeURIComponent("Purchase: "+title),close:sold});
+  });
+  document.getElementById("prints").addEventListener("click",function(e){
+    var o=e.target.closest("a.open");if(!o)return;
+    e.preventDefault();
+    var t=o.closest(".tile"),title=t.querySelector("h3").textContent;
+    openDlg({title:title,img:t.getAttribute("data-img"),dimLabel:"Print dimensions:",dim:t.getAttribute("data-dim"),price:t.getAttribute("data-price"),more:t.querySelector(".more").innerHTML,btn:"Order this print",href:"mailto:hello@mattmoffett.com?subject="+encodeURIComponent("Print order: "+title)});
   });
   document.getElementById("dx").addEventListener("click",function(){dlg.close()});
   dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
