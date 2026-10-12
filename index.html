@@ -117,6 +117,11 @@ dialog .ph{aspect-ratio:4/5}
 .svc p{margin:.6rem 0 0;color:var(--muted)}
 .mail{display:inline-block;font-weight:800;letter-spacing:-.02em;font-size:clamp(1.4rem,5vw,2.8rem);word-break:break-word;text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:4px;text-underline-offset:6px}
 footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+.umbrella{position:fixed;left:0;top:0;width:34px;height:34px;pointer-events:none;z-index:9999;opacity:0;transition:opacity .2s;transform-origin:50% 20%;will-change:transform}
+.umbrella .o{fill:var(--orange)}
+.umbrella .m{fill:var(--magenta)}
+.umbrella .h{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+@media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.umbrella{display:none}}
 </style>
 </head>
 <body>
@@ -247,6 +252,8 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
 <footer>© <span id="yr"></span> Matt Moffett. Tulsa, Oklahoma.</footer>
 </div>
 
+<svg class="umbrella" id="umb" aria-hidden="true" viewBox="0 0 40 40" width="34" height="34"><path class="o" d="M3 20Q3 4 20 4Q37 4 37 20Q32 16.5 28.5 20Q24.5 16.5 20 20Q15.5 16.5 11.5 20Q8 16.5 3 20Z"/><path class="m" d="M20 4Q13 8 11.5 20Q15.5 16.5 20 20Z"/><path class="m" d="M20 4Q37 4 37 20Q33 16.5 28.5 20Q27 8 20 4Z"/><path class="h" d="M20 4V1.5M20 20V33Q20 37 16.5 37Q14 37 14 34.5"/></svg>
+
 <script>
 (function(){
   var pages=["home","work","prints","about","services","contact"];
@@ -296,6 +303,22 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
   document.getElementById("dx").addEventListener("click",function(){dlg.close()});
   dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
   document.getElementById("yr").textContent=new Date().getFullYear();
+
+  var umb=document.getElementById("umb");
+  if(umb&&matchMedia("(hover:hover) and (pointer:fine)").matches&&!matchMedia("(prefers-reduced-motion:reduce)").matches){
+    var ux=0,uy=0,tx=0,ty=0,shown=false;
+    window.addEventListener("mousemove",function(e){
+      tx=e.clientX;ty=e.clientY;
+      if(!shown){ux=tx;uy=ty;shown=true;umb.style.opacity=1}
+    });
+    document.documentElement.addEventListener("mouseleave",function(){shown=false;umb.style.opacity=0});
+    (function loop(){
+      var dx=tx-ux;
+      ux+=dx*.18;uy+=(ty-uy)*.18;
+      umb.style.transform="translate("+(ux+14)+"px,"+(uy+14)+"px) rotate("+Math.max(-25,Math.min(25,dx*.6))+"deg)";
+      requestAnimationFrame(loop);
+    })();
+  }
 })();
 </script>
 </body>
