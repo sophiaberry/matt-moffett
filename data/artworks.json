@@ -5,27 +5,20 @@
       "image": "images/Logan-and-Sister.jpg",
       "size": "30 × 30 in",
       "medium": "Oil on canvas",
-      "year": "",
       "status": "Sold",
-      "price": "",
       "featured": true
     },
     {
       "title": "Henry the Horrible",
       "image": "images/Henry-the-Horrible.jpg",
-      "size": "00 × 00 in",
-      "medium": "",
-      "year": "",
+      "size": "24 × 36 in",
       "status": "Sold",
-      "price": "",
       "featured": true
     },
     {
       "title": "Oxley Nature Center",
       "image": "images/OxleyNatureCenter.jpg",
       "size": "30 × 40 in",
-      "medium": "",
-      "year": "",
       "status": "Available",
       "price": "$0,000",
       "featured": true
@@ -34,10 +27,7 @@
       "title": "Spirit Animals",
       "image": "images/SpiritAnimals.jpg",
       "size": "36 × 48 in",
-      "medium": "",
-      "year": "",
       "status": "Sold",
-      "price": "",
       "featured": true
     },
     {
@@ -47,17 +37,13 @@
       "medium": "Oil on canvas",
       "year": "2023",
       "status": "Sold",
-      "price": "",
       "featured": true
     },
     {
       "title": "Bear",
       "image": "images/Bear.jpg",
       "size": "36 × 36 in",
-      "medium": "",
-      "year": "",
       "status": "Sold",
-      "price": "",
       "featured": true
     },
     {
@@ -67,7 +53,6 @@
       "medium": "Oil on canvas",
       "year": "2023",
       "status": "Sold",
-      "price": "",
       "featured": false
     },
     {
@@ -77,17 +62,13 @@
       "medium": "Oil on canvas",
       "year": "2024",
       "status": "Sold",
-      "price": "",
       "featured": false
     },
     {
       "title": "Moth Night",
       "image": "images/MothNight.jpg",
       "size": "24 × 24 in",
-      "medium": "",
-      "year": "",
       "status": "Sold",
-      "price": "",
       "featured": false
     }
   ]
