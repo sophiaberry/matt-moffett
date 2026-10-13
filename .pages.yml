@@ -1,0 +1,78 @@
+media:
+  input: images
+  output: images
+
+content:
+  - name: artworks
+    label: Original paintings
+    type: file
+    path: data/artworks.json
+    format: json
+    fields:
+      - name: artworks
+        label: Paintings
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: image
+            label: Photo
+            type: image
+          - name: size
+            label: Size (for example 30 × 40 in)
+            type: string
+          - name: medium
+            label: Medium (for example Oil on canvas)
+            type: string
+          - name: year
+            label: Year
+            type: string
+          - name: status
+            label: Available or sold
+            type: select
+            options:
+              values: [Available, Sold]
+          - name: price
+            label: Price (for example $2,400). Leave empty if sold.
+            type: string
+          - name: featured
+            label: Show in Featured work on the home page
+            type: boolean
+
+  - name: prints
+    label: Prints
+    type: file
+    path: data/prints.json
+    format: json
+    fields:
+      - name: prints
+        label: Prints
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: image
+            label: Photo
+            type: image
+          - name: size
+            label: Print size (for example 12" x 12")
+            type: string
+          - name: size_details
+            label: Size details for the pop-up (optional)
+            type: string
+          - name: price
+            label: Price (for example $40)
+            type: string
+          - name: buy_link
+            label: Shopify buy link (leave empty to use an email order button)
+            type: string
+          - name: description
+            label: Description (optional)
+            type: text
+          - name: featured
+            label: Show in Featured work on the home page
+            type: boolean
