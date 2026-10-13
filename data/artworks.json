@@ -70,6 +70,15 @@
       "size": "24 × 24 in",
       "status": "Sold",
       "featured": false
+    },
+    {
+      "title": "Disillusion",
+      "image": "images/Disillusion.jpg",
+      "size": "30 x 30 in",
+      "medium": "Oil on canvas",
+      "year": "2024",
+      "status": "Sold",
+      "featured": false
     }
   ]
 }
