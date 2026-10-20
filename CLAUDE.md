@@ -9,8 +9,9 @@ index.html          The whole site: markup, CSS (in <style>) and JS (in <script>
 favicon.jpg         Favicon and apple-touch-icon
 data/artworks.json  Original paintings, shown on the Work page
 data/prints.json    Prints for sale, shown on the Prints page
+data/about.json     About page headline, photo and bio
 images/             All images (artwork photos, headshot, home banner)
-.pages.yml          Pages CMS config for editing the two JSON files and uploading images
+.pages.yml          Pages CMS config for editing the JSON files and uploading images
 ```
 
 ## How index.html works
@@ -22,14 +23,15 @@ images/             All images (artwork photos, headshot, home banner)
   - `#printgrid` (Prints)
   Because the data is loaded with `fetch`, opening `index.html` from `file://` won't show artwork. Serve it locally instead, for example `python3 -m http.server`.
 - **Detail dialog.** Clicking a tile opens `<dialog id="dlg">` through `openDlg()`. Artwork details come from `data-*` attributes on the tile. Print details come from the `PRINTS` array.
-- **Hand-written content.** The About, Services and Contact copy, the home banner image (`images/The-Night-We-Learned-How-to-Swim.jpg`) and the About headshot (`images/Matt-Moffett-headshot.png`) are set directly in `index.html`, not in the CMS.
+- **About page.** `data/about.json` is fetched separately and fills `#about-headline`, `#about-photo` and `#about-bio` (the bio goes through `paras()`). The same content is also written into `index.html` as a fallback if the fetch fails, so keep the two roughly in sync when changing the default.
+- **Hand-written content.** The Services and Contact copy and the home banner image (`images/The-Night-We-Learned-How-to-Swim.jpg`) are set directly in `index.html`, not in the CMS.
 - **Styling.** Colors and fonts are CSS variables on `:root`. The fonts are Hanken Grotesk for body text and Gloock for headings, both loaded from Google Fonts. Tiles cycle through the palette classes `p1` to `p6`.
-- **Contact.** All email links and order/purchase fallbacks go to `hello@mattmoffett.com`.
+- **Contact.** All email links and order/purchase fallbacks go to `tulser33@gmail.com`.
 - The script escapes all values from the JSON with `esc()`, and `src()` strips leading slashes from image paths. Keep that escaping for any new fields.
 
 ## Data files
 
-Both files are JSON objects wrapping one list: `{ "artworks": [...] }` and `{ "prints": [...] }`. Pages CMS edits them, so keep that shape and the field names in sync with `.pages.yml`.
+The artwork and print files are JSON objects wrapping one list: `{ "artworks": [...] }` and `{ "prints": [...] }`. `data/about.json` is a single object with `headline`, `photo` and `bio` (a blank line in `bio` starts a new paragraph). Pages CMS edits all three, so keep that shape and the field names in sync with `.pages.yml`.
 
 **Artwork fields:** `title` (required, entries without one are skipped), `image`, `size`, `medium`, `year`, `status` (`"Available"` or `"Sold"`, case-insensitive), `price`, `featured`.
 - Sold pieces show a SOLD tag, and the dialog links to Prints.
