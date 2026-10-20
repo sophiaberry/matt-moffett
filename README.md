@@ -66,4 +66,4 @@ Claude Code saves its work to a branch first. Ask it to merge into **main** (or 
 
 ## Contact
 
-Site inquiries go to **hello@mattmoffett.com**.
+Site inquiries go to **tulser33@gmail.com**.

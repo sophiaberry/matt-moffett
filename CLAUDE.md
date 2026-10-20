@@ -26,7 +26,7 @@ images/             All images (artwork photos, headshot, home banner)
 - **About page.** `data/about.json` is fetched separately and fills `#about-headline`, `#about-photo` and `#about-bio` (the bio goes through `paras()`). The same content is also written into `index.html` as a fallback if the fetch fails, so keep the two roughly in sync when changing the default.
 - **Hand-written content.** The Services and Contact copy and the home banner image (`images/The-Night-We-Learned-How-to-Swim.jpg`) are set directly in `index.html`, not in the CMS.
 - **Styling.** Colors and fonts are CSS variables on `:root`. The fonts are Hanken Grotesk for body text and Gloock for headings, both loaded from Google Fonts. Tiles cycle through the palette classes `p1` to `p6`.
-- **Contact.** All email links and order/purchase fallbacks go to `hello@mattmoffett.com`.
+- **Contact.** All email links and order/purchase fallbacks go to `tulser33@gmail.com`.
 - The script escapes all values from the JSON with `esc()`, and `src()` strips leading slashes from image paths. Keep that escaping for any new fields.
 
 ## Data files

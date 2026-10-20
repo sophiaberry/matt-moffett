@@ -183,7 +183,7 @@ footer .fine a{color:#DDE3F5}
   <div class="cta">
     <h2>Have a project in mind?</h2>
     <p>Commissions, prints, and collaborations are open. Send a note and Matt will reply within a few days.</p>
-    <a class="btn" href="mailto:hello@mattmoffett.com">Email Matt</a>
+    <a class="btn" href="mailto:tulser33@gmail.com">Email Matt</a>
   </div>
 </section>
 
@@ -209,7 +209,7 @@ footer .fine a{color:#DDE3F5}
   <p>Signed and numbered prints by Matt Moffett.</p>
   <div class="note">
     <p>See a print on Matt's Instagram that isn't listed here? Email to request one.</p>
-    <a class="btn" href="mailto:hello@mattmoffett.com?subject=Print%20request">Request a print</a>
+    <a class="btn" href="mailto:tulser33@gmail.com?subject=Print%20request">Request a print</a>
   </div>
   <div class="masonry" id="printgrid"></div>
 </section>
@@ -248,7 +248,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
 <section id="contact" class="page" aria-label="Contact">
   <div class="hero"><h1>Contact</h1></div>
   <p>Tell Matt about your project, your space, and your timeline.</p>
-  <a class="mail" href="mailto:hello@mattmoffett.com">hello@mattmoffett.com</a>
+  <a class="mail" href="mailto:tulser33@gmail.com">tulser33@gmail.com</a>
   <p style="margin-top:1.5rem;color:var(--muted)">Based in Tulsa, Oklahoma. Available for local and travel projects.</p>
 </section>
 </main>
@@ -275,7 +275,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     <nav aria-label="Footer">
       <a href="#home">Home</a><a href="#work">Work</a><a href="#prints">Prints</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
     </nav>
-    <p class="fine"><span>© <span id="yr"></span> Matt Moffett. Tulsa, Oklahoma.</span><a href="mailto:hello@mattmoffett.com">hello@mattmoffett.com</a></p>
+    <p class="fine"><span>© <span id="yr"></span> Matt Moffett. Tulsa, Oklahoma.</span><a href="mailto:tulser33@gmail.com">tulser33@gmail.com</a></p>
   </div>
 </footer>
 
@@ -333,7 +333,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     prints.forEach(function(p,i){
       if(!p||!p.title)return;
       if(p.featured)feat+=fwTile(p.title,p.image,p.size);
-      pr+='<div class="tile '+PAL[i%6]+' pr" data-i="'+i+'"><a class="open" href="#prints"><img class="wimg" src="'+esc(src(p.image))+'" alt="'+esc(p.title)+'" loading="lazy"><div class="cap"><h3>'+esc(p.title)+'</h3><span>'+esc(p.size)+'</span></div></a>'+(p.price?'<div class="price">'+esc(p.price)+'</div>':'')+'<a class="btn" href="'+esc(p.buy_link||"mailto:hello@mattmoffett.com?subject="+encodeURIComponent("Print order: "+p.title))+'"'+(p.buy_link?' target="_blank" rel="noopener"':'')+'>'+(p.buy_link?'Buy this print':'Order this print')+'</a></div>';
+      pr+='<div class="tile '+PAL[i%6]+' pr" data-i="'+i+'"><a class="open" href="#prints"><img class="wimg" src="'+esc(src(p.image))+'" alt="'+esc(p.title)+'" loading="lazy"><div class="cap"><h3>'+esc(p.title)+'</h3><span>'+esc(p.size)+'</span></div></a>'+(p.price?'<div class="price">'+esc(p.price)+'</div>':'')+'<a class="btn" href="'+esc(p.buy_link||"mailto:tulser33@gmail.com?subject="+encodeURIComponent("Print order: "+p.title))+'"'+(p.buy_link?' target="_blank" rel="noopener"':'')+'>'+(p.buy_link?'Buy this print':'Order this print')+'</a></div>';
     });
     document.getElementById("featured").innerHTML=feat;
     document.getElementById("avail").innerHTML=av||'<p>New work is on the way. Email Matt to ask about commissions.</p>';
@@ -368,13 +368,13 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
         sold=t.getAttribute("data-s")==="Sold",
         med=t.getAttribute("data-medium"),
         yr=t.getAttribute("data-year");
-    openDlg({title:title,img:t.getAttribute("data-img"),more:(med?"<p><strong>Medium:</strong> "+med+"</p>":"")+(yr?"<p><strong>Year:</strong> "+yr+"</p>":""),cls:(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":""),dimLabel:"Dimensions:",dim:t.querySelector(".meta").textContent,price:sold?"SOLD":t.querySelector(".tag").textContent,sold:sold,note:sold?"This original has sold. Prints may be available.":"Available. Medium, year, and shipping details go here.",btn:sold?"See prints":"Buy this piece",href:sold?"#prints":"mailto:hello@mattmoffett.com?subject="+encodeURIComponent("Purchase: "+title),close:sold});
+    openDlg({title:title,img:t.getAttribute("data-img"),more:(med?"<p><strong>Medium:</strong> "+med+"</p>":"")+(yr?"<p><strong>Year:</strong> "+yr+"</p>":""),cls:(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":""),dimLabel:"Dimensions:",dim:t.querySelector(".meta").textContent,price:sold?"SOLD":t.querySelector(".tag").textContent,sold:sold,note:sold?"This original has sold. Prints may be available.":"Available. Medium, year, and shipping details go here.",btn:sold?"See prints":"Buy this piece",href:sold?"#prints":"mailto:tulser33@gmail.com?subject="+encodeURIComponent("Purchase: "+title),close:sold});
   });
   document.getElementById("prints").addEventListener("click",function(e){
     var o=e.target.closest("a.open");if(!o)return;
     e.preventDefault();
     var p=PRINTS[+o.closest(".tile").getAttribute("data-i")];if(!p)return;
-    openDlg({title:p.title,img:p.image,dimLabel:"Print dimensions:",dim:p.size_details||p.size,price:p.price,more:paras(p.description),btn:p.buy_link?"Buy this print":"Order this print",href:p.buy_link||"mailto:hello@mattmoffett.com?subject="+encodeURIComponent("Print order: "+p.title),blank:!!p.buy_link});
+    openDlg({title:p.title,img:p.image,dimLabel:"Print dimensions:",dim:p.size_details||p.size,price:p.price,more:paras(p.description),btn:p.buy_link?"Buy this print":"Order this print",href:p.buy_link||"mailto:tulser33@gmail.com?subject="+encodeURIComponent("Print order: "+p.title),blank:!!p.buy_link});
   });
   document.getElementById("dx").addEventListener("click",function(){dlg.close()});
   dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
