@@ -20,7 +20,8 @@ The paintings and prints aren't typed into the page itself. They're stored in tw
 | `images/` | Every photo used on the site |
 | `index.html` | The design, layout, and the Services and Contact text |
 | `.pages.yml` | Settings for the Pages CMS editor (see below) |
-| `favicon.jpg` | The little icon shown in the browser tab |
+| `favicon.png` | The little umbrella icon shown in the browser tab |
+| `favicon.jpg` | The same icon on white, used when someone saves the site to their phone home screen |
 | `CLAUDE.md` | Technical notes for Claude Code |
 
 Each painting or print only needs to be entered once. The site places it everywhere it belongs: Featured work on the home page, the Available or Sold section of Work, and the Prints page.

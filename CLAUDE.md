@@ -6,7 +6,8 @@ Portfolio site for Matt Moffett, a painter and mosaic artist in Tulsa, Oklahoma.
 
 ```
 index.html          The whole site: markup, CSS (in <style>) and JS (in <script>)
-favicon.jpg         Favicon and apple-touch-icon
+favicon.png         Browser-tab favicon (transparent background)
+favicon.jpg         apple-touch-icon (white background, since iOS fills transparency with black)
 data/artworks.json  Original paintings, shown on the Work page
 data/prints.json    Prints for sale, shown on the Prints page
 data/about.json     About page headline, photo and bio
