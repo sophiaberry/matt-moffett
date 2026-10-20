@@ -16,8 +16,9 @@ The paintings and prints aren't typed into the page itself. They're stored in tw
 |---|---|
 | `data/artworks.json` | Original paintings: title, photo, size, medium, year, Available/Sold, price, featured |
 | `data/prints.json` | Prints for sale: title, photo, print size, price, Shopify buy link, description, featured |
+| `data/about.json` | The About page: headline, photo of Matt, and bio |
 | `images/` | Every photo used on the site |
-| `index.html` | The design, layout, and the About, Services and Contact text |
+| `index.html` | The design, layout, and the Services and Contact text |
 | `.pages.yml` | Settings for the Pages CMS editor (see below) |
 | `favicon.jpg` | The little icon shown in the browser tab |
 | `CLAUDE.md` | Technical notes for Claude Code |
@@ -28,11 +29,11 @@ Each painting or print only needs to be entered once. The site places it everywh
 
 ## Editing the site
 
-### Paintings and prints: use Pages CMS (no code)
+### Paintings, prints and the About page: use Pages CMS (no code)
 
 1. Go to **[app.pagescms.org](https://app.pagescms.org)** and sign in.
 2. Open **matt-site**.
-3. Choose **Original paintings** or **Prints**.
+3. Choose **Original paintings**, **Prints** or **About page**.
 4. To change a piece, click it, edit the form, and click **Save**.
 5. To add a piece, click **Add**, upload the photo, fill in the details, and click **Save**.
 
@@ -47,7 +48,7 @@ Changes appear on the live site within a couple of minutes. Refresh the page to 
 
 ### Design, layout and page text: use Claude Code
 
-For anything beyond paintings and prints, like colors, fonts, layout, new sections, or the About and Services text, open **[claude.ai/code](https://claude.ai/code)**, select the **matt-site** repository, and describe the change in plain English. For example:
+For anything beyond paintings and prints, like colors, fonts, layout, new sections, or the Services text, open **[claude.ai/code](https://claude.ai/code)**, select the **matt-site** repository, and describe the change in plain English. For example:
 
 > "Change Henry the Horrible's size to 24 × 30 in and make the About page headline bigger."
 

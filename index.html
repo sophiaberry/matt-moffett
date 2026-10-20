@@ -219,17 +219,18 @@ footer .fine a{color:#DDE3F5}
   <div class="split">
    <div class="portrait">
   <img
+    id="about-photo"
     src="images/Matt-Moffett-headshot.png"
     alt="Matt Moffett"
     style="display:block; width:100%; height:100%; object-fit:cover;"
   >
 </div>
     <div>
-      <h2>Matt Moffett is an artist based in Tulsa, Oklahoma.</h2>
-      <p>Matt Moffett has been an artist in Tulsa for nearly 30 years, but growing up he never thought that would be his future. “I always thought I was one of those people that didn’t have that gift,” Moffett says. It wasn’t until he had difficulties finding 
+      <h2 id="about-headline">Matt Moffett is an artist based in Tulsa, Oklahoma.</h2>
+      <div id="about-bio"><p>Matt Moffett has been an artist in Tulsa for nearly 30 years, but growing up he never thought that would be his future. “I always thought I was one of those people that didn’t have that gift,” Moffett says. It wasn’t until he had difficulties finding 
         someone in Tulsa to paint a portrait of his dog that he decided to just do it himself. “Then all my friends were saying ‘paint my dog, paint my dog,’ and that’s how I started in art,” he says. Teaching college-level Spanish at the time, his newfound painting career was slow going at first. “My friend said, ‘Don’t quit your day job right away. Just work at it.’ I think the hardest part was giving myself permission to be an artist. But after a while, it just really took off,” Moffett explains, adding that he also transitioned into teaching art at elementary schools. 
 
-In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art program in the Kendall Whittier neighborhood, where he worked as a teacher and the executive director for 10 years.</p>
+In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art program in the Kendall Whittier neighborhood, where he worked as a teacher and the executive director for 10 years.</p></div>
     </div>
   </div>
 </section>
@@ -311,6 +312,12 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
   function paras(t){t=String(t||"").trim();if(!t)return"";return t.split(/\n\s*\n/).map(function(x){return"<p>"+esc(x).replace(/\n/g,"<br>")+"</p>"}).join("")}
   function fwTile(title,img,size){return'<div class="fw"><img src="'+esc(src(img))+'" alt="'+esc(title)+'" loading="lazy"><div class="fw-cap"><h3>'+esc(title)+'</h3>'+(size?'<p>'+esc(size)+'</p>':'')+'</div></div>'}
   function getJSON(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error(u);return r.json()})}
+  getJSON("data/about.json").then(function(a){
+    if(!a)return;
+    if(a.headline)document.getElementById("about-headline").textContent=a.headline;
+    if(a.photo)document.getElementById("about-photo").src=src(a.photo);
+    if(a.bio)document.getElementById("about-bio").innerHTML=paras(a.bio);
+  }).catch(function(){});
   Promise.all([getJSON("data/artworks.json"),getJSON("data/prints.json")]).then(function(res){
     var arts=(res[0]&&res[0].artworks)||[],prints=(res[1]&&res[1].prints)||[];
     PRINTS=prints;
