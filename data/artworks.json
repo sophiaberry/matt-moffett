@@ -79,6 +79,15 @@
       "year": "2024",
       "status": "Sold",
       "featured": false
+    },
+    {
+      "title": "The Night We Learned To Pray",
+      "size": "36 x 48",
+      "medium": "Oil on canvas",
+      "year": "2026",
+      "status": "Available",
+      "price": "$6,000",
+      "featured": false
     }
   ]
 }
