@@ -353,7 +353,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     var dp=document.getElementById("dp");
     dp.textContent=o.price;dp.className="dprice"+(o.sold?" s":"");
     document.getElementById("dmore").innerHTML=o.more||"";
-    document.getElementById("dn").textContent=o.note||"";
+    var dn=document.getElementById("dn");dn.textContent=o.note||"";dn.hidden=!o.note;
     var a=document.getElementById("da");a.innerHTML="";
     var l=document.createElement("a");l.className="btn";l.href=o.href;l.textContent=o.btn;
     if(o.blank){l.target="_blank";l.rel="noopener"}
@@ -368,7 +368,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
         sold=t.getAttribute("data-s")==="Sold",
         med=t.getAttribute("data-medium"),
         yr=t.getAttribute("data-year");
-    openDlg({title:title,img:t.getAttribute("data-img"),more:(med?"<p><strong>Medium:</strong> "+med+"</p>":"")+(yr?"<p><strong>Year:</strong> "+yr+"</p>":""),cls:(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":""),dimLabel:"Dimensions:",dim:t.querySelector(".meta").textContent,price:sold?"SOLD":t.querySelector(".tag").textContent,sold:sold,note:sold?"This original has sold. Prints may be available.":"Available. Medium, year, and shipping details go here.",btn:sold?"See prints":"Buy this piece",href:sold?"#prints":"mailto:tulser33@gmail.com?subject="+encodeURIComponent("Purchase: "+title),close:sold});
+    openDlg({title:title,img:t.getAttribute("data-img"),more:(med?"<p><strong>Medium:</strong> "+med+"</p>":"")+(yr?"<p><strong>Year:</strong> "+yr+"</p>":""),cls:(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":""),dimLabel:"Dimensions:",dim:t.querySelector(".meta").textContent,price:sold?"SOLD":t.querySelector(".tag").textContent,sold:sold,note:sold?"This original has sold. Prints may be available.":"",btn:sold?"See prints":"Buy this piece",href:sold?"#prints":"mailto:tulser33@gmail.com?subject="+encodeURIComponent("Purchase: "+title),close:sold});
   });
   document.getElementById("prints").addEventListener("click",function(e){
     var o=e.target.closest("a.open");if(!o)return;
