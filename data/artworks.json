@@ -89,6 +89,15 @@
       "status": "Available",
       "price": "$6,000",
       "featured": false
+    },
+    {
+      "title": "Ghost Garden",
+      "size": "32.5 x 32.5",
+      "medium": "Cyanotype shadow box",
+      "year": "2025",
+      "status": "Available",
+      "price": "400",
+      "featured": false
     }
   ]
 }
