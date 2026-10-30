@@ -96,6 +96,14 @@
       "year": "2025",
       "status": "Available",
       "featured": false
+    },
+    {
+      "title": "Photobomb",
+      "image": "images/Photobomb.jpg",
+      "size": "37\" diameter, 3\" thick",
+      "year": "2026",
+      "status": "Available",
+      "featured": false
     }
   ]
 }
