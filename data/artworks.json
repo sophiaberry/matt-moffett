@@ -20,7 +20,6 @@
       "image": "images/OxleyNatureCenter.jpg",
       "size": "30 × 40 in",
       "status": "Available",
-      "price": "$2,100",
       "featured": true
     },
     {
@@ -87,7 +86,6 @@
       "medium": "Oil on canvas",
       "year": "2026",
       "status": "Available",
-      "price": "$5,200",
       "featured": false
     },
     {
@@ -97,7 +95,6 @@
       "medium": "Cyanotype shadow box",
       "year": "2025",
       "status": "Available",
-      "price": "$410",
       "featured": false
     }
   ]
