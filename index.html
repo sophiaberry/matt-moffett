@@ -326,7 +326,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
       if(!a||!a.title)return;
       var sold=String(a.status||"").toLowerCase()==="sold";
       if(a.featured)feat+=fwTile(a.title,a.image,a.size);
-      var t='<a class="tile '+PAL[i%6]+(sold?' sold':'')+'" href="#work" data-s="'+(sold?'Sold':'Available')+'"'+(a.medium?' data-medium="'+esc(a.medium)+'"':'')+(a.year?' data-year="'+esc(a.year)+'"':'')+' data-img="'+esc(src(a.image))+'"><img class="wimg" src="'+esc(src(a.image))+'" alt="'+esc(a.title)+'" loading="lazy"><div class="cap"><h3>'+esc(a.title)+'</h3>'+(sold?'<b class="tag s">SOLD</b>':'<b class="tag">'+esc(a.price||"Inquire")+'</b>')+'</div><div class="meta">'+esc(a.size)+'</div></a>';
+      var t='<a class="tile '+PAL[i%6]+(sold?' sold':'')+'" href="#work" data-s="'+(sold?'Sold':'Available')+'"'+(a.medium?' data-medium="'+esc(a.medium)+'"':'')+(a.year?' data-year="'+esc(a.year)+'"':'')+' data-img="'+esc(src(a.image))+'"><img class="wimg" src="'+esc(src(a.image))+'" alt="'+esc(a.title)+'" loading="lazy"><div class="cap"><h3>'+esc(a.title)+'</h3>'+(sold?'<b class="tag s">SOLD</b>':(a.price?'<b class="tag">'+esc(a.price)+'</b>':''))+'</div><div class="meta">'+esc(a.size)+'</div></a>';
       if(sold)so+=t;else av+=t;
     });
     var pr="";
@@ -351,7 +351,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
     document.getElementById("dl").textContent=o.dimLabel;
     document.getElementById("dd").textContent=o.dim;
     var dp=document.getElementById("dp");
-    dp.textContent=o.price;dp.className="dprice"+(o.sold?" s":"");
+    dp.textContent=o.price||"";dp.hidden=!o.price;dp.className="dprice"+(o.sold?" s":"");
     document.getElementById("dmore").innerHTML=o.more||"";
     var dn=document.getElementById("dn");dn.textContent=o.note||"";dn.hidden=!o.note;
     var a=document.getElementById("da");a.innerHTML="";
@@ -368,7 +368,7 @@ In 2007 Moffett founded the Tulsa Girls Art School, a nonprofit afterschool art 
         sold=t.getAttribute("data-s")==="Sold",
         med=t.getAttribute("data-medium"),
         yr=t.getAttribute("data-year");
-    openDlg({title:title,img:t.getAttribute("data-img"),more:(med?"<p><strong>Medium:</strong> "+med+"</p>":"")+(yr?"<p><strong>Year:</strong> "+yr+"</p>":""),cls:(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":""),dimLabel:"Dimensions:",dim:t.querySelector(".meta").textContent,price:sold?"SOLD":t.querySelector(".tag").textContent,sold:sold,note:sold?"This original has sold. Prints may be available.":"",btn:sold?"See prints":"Buy this piece",href:sold?"#prints":"mailto:tulser33@gmail.com?subject="+encodeURIComponent("Purchase: "+title),close:sold});
+    openDlg({title:title,img:t.getAttribute("data-img"),more:(med?"<p><strong>Medium:</strong> "+med+"</p>":"")+(yr?"<p><strong>Year:</strong> "+yr+"</p>":""),cls:(t.className.match(/p\d/)||[""])[0]+(t.classList.contains("mos")?" mos":""),dimLabel:"Dimensions:",dim:t.querySelector(".meta").textContent,price:sold?"SOLD":(t.querySelector(".tag")||{}).textContent||"",sold:sold,note:sold?"This original has sold. Prints may be available.":"",btn:sold?"See prints":"Buy this piece",href:sold?"#prints":"mailto:tulser33@gmail.com?subject="+encodeURIComponent("Purchase: "+title),close:sold});
   });
   document.getElementById("prints").addEventListener("click",function(e){
     var o=e.target.closest("a.open");if(!o)return;
