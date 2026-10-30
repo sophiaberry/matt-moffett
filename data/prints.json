@@ -3,31 +3,34 @@
     {
       "title": "Local Villa",
       "image": "images/LocalVilla.jpeg",
-      "size": "12\" x 12\"",
-      "size_details": "12\" x 12\" with .5\" border",
-      "price": "$40",
+      "size": "24\" x 24\"",
+      "size_details": "24\" x 24\" signed print, unframed",
+      "price": "$95",
       "description": "Display the beautiful Philbrook Villa and Gardens in your home with this colorful rendition created by esteemed local artist Matt Moffett.\n\nEach print edition is signed and numbered by Matt and is printed on high-quality fine art paper.",
       "featured": true
     },
     {
       "title": "Garden Party",
       "image": "images/GardenParty.jpg",
-      "size": "13\" x 16\"",
-      "price": "$55",
+      "size": "36\" x 24\"",
+      "size_details": "36\" x 24\" signed print, unframed",
+      "price": "$125",
       "featured": false
     },
     {
       "title": "Sunday Will Never Be The Same",
       "image": "images/SundayWillNeverBeTheSame.png",
-      "size": "13\" x 19\"",
-      "price": "$70",
+      "size": "24\" x 36\"",
+      "size_details": "24\" x 36\" signed print, unframed",
+      "price": "$125",
       "featured": false
     },
     {
       "title": "Bear",
       "image": "images/Bear.jpg",
-      "size": "12\" x 12\"",
-      "price": "$50",
+      "size": "24\" x 24\"",
+      "size_details": "24\" x 24\" signed print, unframed",
+      "price": "$95",
       "featured": false
     }
   ]
