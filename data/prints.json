@@ -32,6 +32,14 @@
       "size_details": "24\" x 24\" signed print, unframed",
       "price": "$95",
       "featured": false
+    },
+    {
+      "title": "Window into Wonderland",
+      "image": "images/Window-into-Wonderland.jpg",
+      "size": "24\" x 24\"",
+      "size_details": "24\" x 24\" signed print, unframed",
+      "price": "$95",
+      "featured": false
     }
   ]
 }
